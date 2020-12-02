@@ -83,6 +83,9 @@
         <ObjectProperty IRI="#aMembre"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#aPaysDOrigine"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#aPersonnage"/>
     </Declaration>
     <Declaration>
@@ -252,6 +255,13 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Serie"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#aPaysDOrigine"/>
+            <Class IRI="#Pays"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Serie"/>
         <ObjectMinCardinality cardinality="2">
             <ObjectProperty IRI="#aSaison"/>
             <Class IRI="#Saison"/>
@@ -280,6 +290,10 @@
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#aMembre"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#aPaysDOrigine"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -328,6 +342,10 @@
         <Class IRI="http://xmlns.com/foaf/0.1/Organization"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aPaysDOrigine"/>
+        <Class IRI="#Serie"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#aSaison"/>
         <Class IRI="#Serie"/>
     </ObjectPropertyDomain>
@@ -358,6 +376,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#aMembre"/>
         <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aPaysDOrigine"/>
+        <Class IRI="#Pays"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#aPersonnage"/>
