@@ -35,6 +35,9 @@
         <Class IRI="#Pays"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Personnage"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#PersonneTechnique"/>
     </Declaration>
     <Declaration>
@@ -56,7 +59,13 @@
         <Class IRI="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#aEpisode"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#aMembre"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#aPersonnage"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#aSaison"/>
@@ -114,6 +123,10 @@
         <Class IRI="http://xmlns.com/foaf/0.1/Document"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Personnage"/>
+        <Class IRI="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#PersonneTechnique"/>
         <Class IRI="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
     </SubClassOf>
@@ -137,26 +150,49 @@
         <Class IRI="#Serie"/>
         <Class IRI="http://xmlns.com/foaf/0.1/Document"/>
     </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Serie"/>
+        <ObjectMinCardinality cardinality="2">
+            <ObjectProperty IRI="#aSaison"/>
+            <Class IRI="#Saison"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#aEpisode"/>
+        <ObjectProperty IRI="http://xmlns.com/foaf/0.1/page"/>
+    </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#aMembre"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#aPersonnage"/>
+        <ObjectProperty IRI="http://xmlns.com/foaf/0.1/page"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#aSaison"/>
         <ObjectProperty IRI="http://xmlns.com/foaf/0.1/page"/>
     </SubObjectPropertyOf>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aEpisode"/>
+        <Class IRI="#Saison"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#aMembre"/>
         <Class IRI="http://xmlns.com/foaf/0.1/Organization"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aPersonnage"/>
+        <Class IRI="#Serie"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#aSaison"/>
         <Class IRI="#Serie"/>
     </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-        <Class IRI="#EquipeTechnique"/>
-    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aEpisode"/>
+        <Class IRI="#Episode"/>
+    </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#aMembre"/>
         <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
@@ -164,10 +200,6 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#aSaison"/>
         <Class IRI="#Saison"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-        <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
     </ObjectPropertyRange>
 </Ontology>
 
