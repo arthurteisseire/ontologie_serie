@@ -13,6 +13,35 @@
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Import>http://xmlns.com/foaf/0.1/</Import>
+    <Declaration>
+        <Class IRI="#Saison"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Serie"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#aSaison"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Saison"/>
+        <Class IRI="http://xmlns.com/foaf/0.1/Document"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Serie"/>
+        <Class IRI="http://xmlns.com/foaf/0.1/Document"/>
+    </SubClassOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#aSaison"/>
+        <ObjectProperty IRI="http://xmlns.com/foaf/0.1/page"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aSaison"/>
+        <Class IRI="#Serie"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aSaison"/>
+        <Class IRI="#Saison"/>
+    </ObjectPropertyRange>
 </Ontology>
 
 
