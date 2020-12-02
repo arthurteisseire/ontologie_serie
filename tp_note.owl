@@ -68,6 +68,9 @@
         <Class IRI="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#aActeur"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#aEpisode"/>
     </Declaration>
     <Declaration>
@@ -85,6 +88,9 @@
     <Declaration>
         <ObjectProperty IRI="#inspireDe"/>
     </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#jouePersonnage"/>
+    </Declaration>
     <EquivalentClasses>
         <Class IRI="#Personnage"/>
         <ObjectUnionOf>
@@ -96,6 +102,13 @@
     <SubClassOf>
         <Class IRI="#Acteur"/>
         <Class IRI="#PersonneTechnique"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Acteur"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#jouePersonnage"/>
+            <Class IRI="#Personnage"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Episode"/>
@@ -201,6 +214,19 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Saison"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#aActeur"/>
+            <ObjectIntersectionOf>
+                <Class IRI="#Acteur"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#aPersonnage"/>
+                    <Class IRI="#Personnage"/>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Saison"/>
         <ObjectMinCardinality cardinality="2">
             <ObjectProperty IRI="#aPersonnage"/>
             <Class IRI="#Personnage"/>
@@ -227,6 +253,10 @@
         <Class IRI="#PersonnageRecurrent"/>
     </DisjointClasses>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#aActeur"/>
+        <ObjectProperty IRI="http://xmlns.com/foaf/0.1/page"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#aEpisode"/>
         <ObjectProperty IRI="http://xmlns.com/foaf/0.1/page"/>
     </SubObjectPropertyOf>
@@ -250,12 +280,20 @@
         <ObjectProperty IRI="#inspireDe"/>
         <ObjectProperty IRI="http://xmlns.com/foaf/0.1/page"/>
     </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#jouePersonnage"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#aHistoire"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#inspireDe"/>
     </FunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aActeur"/>
+        <Class IRI="#Saison"/>
+    </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#aEpisode"/>
         <Class IRI="#Saison"/>
@@ -276,6 +314,14 @@
         <ObjectProperty IRI="#inspireDe"/>
         <Class IRI="#Personnage"/>
     </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#jouePersonnage"/>
+        <Class IRI="#Acteur"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aActeur"/>
+        <Class IRI="#Acteur"/>
+    </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#aEpisode"/>
         <Class IRI="#Episode"/>
@@ -299,6 +345,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#inspireDe"/>
         <Class IRI="#OeuvreLitteraire"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#jouePersonnage"/>
+        <Class IRI="#Personnage"/>
     </ObjectPropertyRange>
 </Ontology>
 
