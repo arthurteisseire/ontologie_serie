@@ -38,6 +38,15 @@
         <Class IRI="#Personnage"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#PersonnageInvite"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PersonnagePrincipal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PersonnageRecurrent"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#PersonneTechnique"/>
     </Declaration>
     <Declaration>
@@ -70,6 +79,14 @@
     <Declaration>
         <ObjectProperty IRI="#aSaison"/>
     </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Personnage"/>
+        <ObjectUnionOf>
+            <Class IRI="#PersonnageInvite"/>
+            <Class IRI="#PersonnagePrincipal"/>
+            <Class IRI="#PersonnageRecurrent"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
     <SubClassOf>
         <Class IRI="#Acteur"/>
         <Class IRI="#PersonneTechnique"/>
@@ -127,6 +144,26 @@
         <Class IRI="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Personnage"/>
+        <ObjectUnionOf>
+            <Class IRI="#PersonnageInvite"/>
+            <Class IRI="#PersonnagePrincipal"/>
+            <Class IRI="#PersonnageRecurrent"/>
+        </ObjectUnionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PersonnageInvite"/>
+        <Class IRI="#Personnage"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PersonnagePrincipal"/>
+        <Class IRI="#Personnage"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PersonnageRecurrent"/>
+        <Class IRI="#Personnage"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#PersonneTechnique"/>
         <Class IRI="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
     </SubClassOf>
@@ -153,10 +190,22 @@
     <SubClassOf>
         <Class IRI="#Serie"/>
         <ObjectMinCardinality cardinality="2">
+            <ObjectProperty IRI="#aPersonnage"/>
+            <Class IRI="#Personnage"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Serie"/>
+        <ObjectMinCardinality cardinality="2">
             <ObjectProperty IRI="#aSaison"/>
             <Class IRI="#Saison"/>
         </ObjectMinCardinality>
     </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#PersonnageInvite"/>
+        <Class IRI="#PersonnagePrincipal"/>
+        <Class IRI="#PersonnageRecurrent"/>
+    </DisjointClasses>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#aEpisode"/>
         <ObjectProperty IRI="http://xmlns.com/foaf/0.1/page"/>
@@ -173,6 +222,9 @@
         <ObjectProperty IRI="#aSaison"/>
         <ObjectProperty IRI="http://xmlns.com/foaf/0.1/page"/>
     </SubObjectPropertyOf>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#aPersonnage"/>
+    </FunctionalObjectProperty>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#aEpisode"/>
         <Class IRI="#Saison"/>
@@ -196,6 +248,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#aMembre"/>
         <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aPersonnage"/>
+        <Class IRI="#Personnage"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#aSaison"/>
