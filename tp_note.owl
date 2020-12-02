@@ -32,6 +32,12 @@
         <Class IRI="#OeuvreLitteraire"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Pays"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PersonneTechnique"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Producteur"/>
     </Declaration>
     <Declaration>
@@ -47,14 +53,17 @@
         <Class IRI="#Serie"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#aSaison"/>
+        <Class IRI="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
     </Declaration>
     <Declaration>
-        <Class IRI="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+        <ObjectProperty IRI="#aMembre"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#aSaison"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#Acteur"/>
-        <Class IRI="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+        <Class IRI="#PersonneTechnique"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Episode"/>
@@ -63,6 +72,34 @@
     <SubClassOf>
         <Class IRI="#EquipeTechnique"/>
         <Class IRI="http://xmlns.com/foaf/0.1/Organization"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EquipeTechnique"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#aMembre"/>
+            <Class IRI="#Producteur"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EquipeTechnique"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#aMembre"/>
+            <Class IRI="#Realisateur"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EquipeTechnique"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#aMembre"/>
+            <Class IRI="#Scenariste"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EquipeTechnique"/>
+        <ObjectMinCardinality cardinality="2">
+            <ObjectProperty IRI="#aMembre"/>
+            <Class IRI="#Acteur"/>
+        </ObjectMinCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Genre"/>
@@ -77,12 +114,16 @@
         <Class IRI="http://xmlns.com/foaf/0.1/Document"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Producteur"/>
+        <Class IRI="#PersonneTechnique"/>
         <Class IRI="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Producteur"/>
+        <Class IRI="#PersonneTechnique"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Realisateur"/>
-        <Class IRI="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+        <Class IRI="#PersonneTechnique"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Saison"/>
@@ -90,23 +131,43 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Scenariste"/>
-        <Class IRI="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+        <Class IRI="#PersonneTechnique"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Serie"/>
         <Class IRI="http://xmlns.com/foaf/0.1/Document"/>
     </SubClassOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#aMembre"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#aSaison"/>
         <ObjectProperty IRI="http://xmlns.com/foaf/0.1/page"/>
     </SubObjectPropertyOf>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aMembre"/>
+        <Class IRI="http://xmlns.com/foaf/0.1/Organization"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#aSaison"/>
         <Class IRI="#Serie"/>
     </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <Class IRI="#EquipeTechnique"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aMembre"/>
+        <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
+    </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#aSaison"/>
         <Class IRI="#Saison"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
     </ObjectPropertyRange>
 </Ontology>
 
