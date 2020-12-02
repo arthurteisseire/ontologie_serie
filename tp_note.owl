@@ -79,6 +79,9 @@
     <Declaration>
         <ObjectProperty IRI="#aSaison"/>
     </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#inspireDe"/>
+    </Declaration>
     <EquivalentClasses>
         <Class IRI="#Personnage"/>
         <ObjectUnionOf>
@@ -152,6 +155,13 @@
         </ObjectUnionOf>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Personnage"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#inspireDe"/>
+            <Class IRI="#OeuvreLitteraire"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#PersonnageInvite"/>
         <Class IRI="#Personnage"/>
     </SubClassOf>
@@ -180,19 +190,19 @@
         <Class IRI="http://xmlns.com/foaf/0.1/Document"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Saison"/>
+        <ObjectMinCardinality cardinality="2">
+            <ObjectProperty IRI="#aPersonnage"/>
+            <Class IRI="#Personnage"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Scenariste"/>
         <Class IRI="#PersonneTechnique"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Serie"/>
         <Class IRI="http://xmlns.com/foaf/0.1/Document"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Serie"/>
-        <ObjectMinCardinality cardinality="2">
-            <ObjectProperty IRI="#aPersonnage"/>
-            <Class IRI="#Personnage"/>
-        </ObjectMinCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Serie"/>
@@ -222,8 +232,12 @@
         <ObjectProperty IRI="#aSaison"/>
         <ObjectProperty IRI="http://xmlns.com/foaf/0.1/page"/>
     </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#inspireDe"/>
+        <ObjectProperty IRI="http://xmlns.com/foaf/0.1/page"/>
+    </SubObjectPropertyOf>
     <FunctionalObjectProperty>
-        <ObjectProperty IRI="#aPersonnage"/>
+        <ObjectProperty IRI="#inspireDe"/>
     </FunctionalObjectProperty>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#aEpisode"/>
@@ -234,12 +248,12 @@
         <Class IRI="http://xmlns.com/foaf/0.1/Organization"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#aPersonnage"/>
+        <ObjectProperty IRI="#aSaison"/>
         <Class IRI="#Serie"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#aSaison"/>
-        <Class IRI="#Serie"/>
+        <ObjectProperty IRI="#inspireDe"/>
+        <Class IRI="#Personnage"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#aEpisode"/>
@@ -256,6 +270,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#aSaison"/>
         <Class IRI="#Saison"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#inspireDe"/>
+        <Class IRI="#OeuvreLitteraire"/>
     </ObjectPropertyRange>
 </Ontology>
 
