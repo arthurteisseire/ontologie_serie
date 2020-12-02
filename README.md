@@ -1,4 +1,4 @@
-# ontologie_serie
+# Ontologie de Série TV
 
 Une ontologie sur les Série TV à partir du vocabulaire FOAF
 
