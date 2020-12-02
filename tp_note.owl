@@ -14,7 +14,34 @@
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Import>http://xmlns.com/foaf/0.1/</Import>
     <Declaration>
+        <Class IRI="#Acteur"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Episode"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EquipeTechnique"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Genre"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Histoire"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OeuvreLitteraire"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Producteur"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Realisateur"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Saison"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Scenariste"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Serie"/>
@@ -22,9 +49,48 @@
     <Declaration>
         <ObjectProperty IRI="#aSaison"/>
     </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Acteur"/>
+        <Class IRI="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Episode"/>
+        <Class IRI="http://xmlns.com/foaf/0.1/Document"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EquipeTechnique"/>
+        <Class IRI="http://xmlns.com/foaf/0.1/Organization"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Genre"/>
+        <Class IRI="http://xmlns.com/foaf/0.1/Document"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Histoire"/>
+        <Class IRI="http://xmlns.com/foaf/0.1/Document"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OeuvreLitteraire"/>
+        <Class IRI="http://xmlns.com/foaf/0.1/Document"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Producteur"/>
+        <Class IRI="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Realisateur"/>
+        <Class IRI="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+    </SubClassOf>
     <SubClassOf>
         <Class IRI="#Saison"/>
         <Class IRI="http://xmlns.com/foaf/0.1/Document"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Scenariste"/>
+        <Class IRI="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Serie"/>
