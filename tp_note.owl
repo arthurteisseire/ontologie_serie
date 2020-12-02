@@ -74,6 +74,9 @@
         <ObjectProperty IRI="#aEpisode"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#aGenre"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#aHistoire"/>
     </Declaration>
     <Declaration>
@@ -157,6 +160,13 @@
     <SubClassOf>
         <Class IRI="#OeuvreLitteraire"/>
         <Class IRI="http://xmlns.com/foaf/0.1/Document"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OeuvreLitteraire"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#aGenre"/>
+            <Class IRI="#Genre"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Personnage"/>
@@ -261,6 +271,10 @@
         <ObjectProperty IRI="http://xmlns.com/foaf/0.1/page"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#aGenre"/>
+        <ObjectProperty IRI="http://xmlns.com/foaf/0.1/page"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#aHistoire"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
@@ -285,6 +299,9 @@
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <FunctionalObjectProperty>
+        <ObjectProperty IRI="#aGenre"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
         <ObjectProperty IRI="#aHistoire"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
@@ -297,6 +314,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#aEpisode"/>
         <Class IRI="#Saison"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aGenre"/>
+        <Class IRI="#OeuvreLitteraire"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#aHistoire"/>
@@ -325,6 +346,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#aEpisode"/>
         <Class IRI="#Episode"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aGenre"/>
+        <Class IRI="#Genre"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#aHistoire"/>
