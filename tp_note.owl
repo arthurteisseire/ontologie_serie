@@ -71,6 +71,9 @@
         <ObjectProperty IRI="#aEpisode"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#aHistoire"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#aMembre"/>
     </Declaration>
     <Declaration>
@@ -157,6 +160,13 @@
     <SubClassOf>
         <Class IRI="#Personnage"/>
         <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#aHistoire"/>
+            <Class IRI="#Histoire"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Personnage"/>
+        <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#inspireDe"/>
             <Class IRI="#OeuvreLitteraire"/>
         </ObjectSomeValuesFrom>
@@ -221,6 +231,10 @@
         <ObjectProperty IRI="http://xmlns.com/foaf/0.1/page"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#aHistoire"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#aMembre"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
@@ -237,11 +251,18 @@
         <ObjectProperty IRI="http://xmlns.com/foaf/0.1/page"/>
     </SubObjectPropertyOf>
     <FunctionalObjectProperty>
+        <ObjectProperty IRI="#aHistoire"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
         <ObjectProperty IRI="#inspireDe"/>
     </FunctionalObjectProperty>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#aEpisode"/>
         <Class IRI="#Saison"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aHistoire"/>
+        <Class IRI="#Personnage"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#aMembre"/>
@@ -258,6 +279,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#aEpisode"/>
         <Class IRI="#Episode"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aHistoire"/>
+        <Class IRI="#Histoire"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#aMembre"/>
