@@ -47,6 +47,9 @@
         <Class IRI="#Realisateur"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Relation_PersonnageActeurSaison"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#RolePersonnage"/>
     </Declaration>
     <Declaration>
@@ -89,9 +92,6 @@
         <ObjectProperty IRI="#inspireDe"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#jouePersonnage"/>
-    </Declaration>
-    <Declaration>
         <NamedIndividual IRI="#ClaireUnderwood"/>
     </Declaration>
     <Declaration>
@@ -116,7 +116,13 @@
         <NamedIndividual IRI="#Recurrent"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Robin_Wright"/>
+        <NamedIndividual IRI="#Relation_HouseOfCardsSaison1_RobinWright_ClaireUnderwood"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RobinWright"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
     </Declaration>
     <Declaration>
         <Class IRI="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -132,13 +138,6 @@
     <SubClassOf>
         <Class IRI="#Acteur"/>
         <Class IRI="#PersonneTechnique"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Acteur"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#jouePersonnage"/>
-            <Class IRI="#Personnage"/>
-        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Episode"/>
@@ -248,10 +247,10 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Saison"/>
-        <ObjectMinCardinality cardinality="2">
+        <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#aPersonnage"/>
             <Class IRI="#Personnage"/>
-        </ObjectMinCardinality>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Scenariste"/>
@@ -308,8 +307,12 @@
         <NamedIndividual IRI="#Recurrent"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Relation_PersonnageActeurSaison"/>
+        <NamedIndividual IRI="#Relation_HouseOfCardsSaison1_RobinWright_ClaireUnderwood"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Acteur"/>
-        <NamedIndividual IRI="#Robin_Wright"/>
+        <NamedIndividual IRI="#RobinWright"/>
     </ClassAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#aSaison"/>
@@ -319,22 +322,27 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#aActeur"/>
         <NamedIndividual IRI="#HouseOfCardsSaison1"/>
-        <NamedIndividual IRI="#Robin_Wright"/>
+        <NamedIndividual IRI="#Relation_HouseOfCardsSaison1_RobinWright_ClaireUnderwood"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#aPersonnage"/>
         <NamedIndividual IRI="#HouseOfCardsSaison1"/>
-        <NamedIndividual IRI="#ClaireUnderwood"/>
+        <NamedIndividual IRI="#Relation_HouseOfCardsSaison1_RobinWright_ClaireUnderwood"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aActeur"/>
+        <NamedIndividual IRI="#Relation_HouseOfCardsSaison1_RobinWright_ClaireUnderwood"/>
+        <NamedIndividual IRI="#RobinWright"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#aPersonnage"/>
-        <NamedIndividual IRI="#HouseOfCardsSaison1"/>
-        <NamedIndividual IRI="#FrancisUnderwood"/>
+        <NamedIndividual IRI="#Relation_HouseOfCardsSaison1_RobinWright_ClaireUnderwood"/>
+        <NamedIndividual IRI="#ClaireUnderwood"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#jouePersonnage"/>
-        <NamedIndividual IRI="#Robin_Wright"/>
-        <NamedIndividual IRI="#ClaireUnderwood"/>
+        <ObjectProperty IRI="#aSaison"/>
+        <NamedIndividual IRI="#Relation_HouseOfCardsSaison1_RobinWright_ClaireUnderwood"/>
+        <NamedIndividual IRI="#HouseOfCardsSaison1"/>
     </ObjectPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#aActeur"/>
@@ -372,10 +380,6 @@
         <ObjectProperty IRI="#inspireDe"/>
         <ObjectProperty IRI="http://xmlns.com/foaf/0.1/page"/>
     </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#jouePersonnage"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#aGenre"/>
     </FunctionalObjectProperty>
@@ -387,7 +391,7 @@
     </FunctionalObjectProperty>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#aActeur"/>
-        <Class IRI="#Saison"/>
+        <Class IRI="#Relation_PersonnageActeurSaison"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#aEpisode"/>
@@ -410,16 +414,20 @@
         <Class IRI="#Serie"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aPersonnage"/>
+        <Class IRI="#Relation_PersonnageActeurSaison"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aSaison"/>
+        <Class IRI="#Relation_PersonnageActeurSaison"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#aSaison"/>
         <Class IRI="#Serie"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#inspireDe"/>
         <Class IRI="#Personnage"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#jouePersonnage"/>
-        <Class IRI="#Acteur"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#aActeur"/>
@@ -457,10 +465,130 @@
         <ObjectProperty IRI="#inspireDe"/>
         <Class IRI="#OeuvreLitteraire"/>
     </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#jouePersonnage"/>
-        <Class IRI="#Personnage"/>
-    </ObjectPropertyRange>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S4</Literal>
+        </Annotation>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#aPersonnage"/>
+                <Variable IRI="relation"/>
+                <Variable IRI="personnage"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#aActeur"/>
+                <Variable IRI="relation"/>
+                <Variable IRI="acteur"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#aSaison"/>
+                <Variable IRI="relation"/>
+                <Variable IRI="saison"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <BuiltInAtom IRI="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select">
+                <Variable IRI="relation"/>
+                <Variable IRI="saison"/>
+                <Variable IRI="acteur"/>
+                <Variable IRI="personnage"/>
+            </BuiltInAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S3</Literal>
+        </Annotation>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#aActeur"/>
+                <Variable IRI="saison"/>
+                <NamedIndividual IRI="#RobinWright"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <BuiltInAtom IRI="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select">
+                <Variable IRI="saison"/>
+            </BuiltInAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S2</Literal>
+        </Annotation>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#aPersonnage"/>
+                <Variable IRI="saison"/>
+                <Variable IRI="personnage"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#aActeur"/>
+                <Variable IRI="saison"/>
+                <NamedIndividual IRI="#RobinWright"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <BuiltInAtom IRI="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select">
+                <Variable IRI="saison"/>
+                <Variable IRI="personnage"/>
+            </BuiltInAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S1</Literal>
+        </Annotation>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#aPersonnage"/>
+                <Variable IRI="saison"/>
+                <Variable IRI="personnage"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <BuiltInAtom IRI="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select">
+                <Variable IRI="saison"/>
+                <Variable IRI="personnage"/>
+            </BuiltInAtom>
+        </Head>
+    </DLSafeRule>
 </Ontology>
 
 
