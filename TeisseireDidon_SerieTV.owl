@@ -6,12 +6,12 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://www.TeisseireDidon.com/ontologies/TeisseireDidon_SeriesTV.owl">
-    <Prefix name="" IRI="http://www.TeisseireDidon.com/ontologies/TeisseireDidon_SeriesTV.owl"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="serie" IRI="http://www.TeisseireDidon.com/ontologies/TeisseireDidon_SeriesTV.owl"/>
     <Import>http://xmlns.com/foaf/spec/20140114.html</Import>
     <Declaration>
         <Class IRI="#Acteur"/>
@@ -38,15 +38,6 @@
         <Class IRI="#Personnage"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#PersonnageInvite"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#PersonnagePrincipal"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#PersonnageRecurrent"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#PersonneTechnique"/>
     </Declaration>
     <Declaration>
@@ -54,6 +45,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Realisateur"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RolePersonnage"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Saison"/>
@@ -97,13 +91,43 @@
     <Declaration>
         <ObjectProperty IRI="#jouePersonnage"/>
     </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ClaireUnderwood"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FrancisUnderwood"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HouseOfCards"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HouseOfCardsSaison1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HouseOfCardsSaison1Episode1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Invite"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Principal"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Recurrent"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Robin_Wright"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/2004/02/skos/core#Concept"/>
+    </Declaration>
     <EquivalentClasses>
-        <Class IRI="#Personnage"/>
-        <ObjectUnionOf>
-            <Class IRI="#PersonnageInvite"/>
-            <Class IRI="#PersonnagePrincipal"/>
-            <Class IRI="#PersonnageRecurrent"/>
-        </ObjectUnionOf>
+        <Class IRI="#RolePersonnage"/>
+        <ObjectOneOf>
+            <NamedIndividual IRI="#Invite"/>
+            <NamedIndividual IRI="#Principal"/>
+            <NamedIndividual IRI="#Recurrent"/>
+        </ObjectOneOf>
     </EquivalentClasses>
     <SubClassOf>
         <Class IRI="#Acteur"/>
@@ -177,14 +201,6 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Personnage"/>
-        <ObjectUnionOf>
-            <Class IRI="#PersonnageInvite"/>
-            <Class IRI="#PersonnagePrincipal"/>
-            <Class IRI="#PersonnageRecurrent"/>
-        </ObjectUnionOf>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Personnage"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#aHistoire"/>
             <Class IRI="#Histoire"/>
@@ -198,18 +214,6 @@
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#PersonnageInvite"/>
-        <Class IRI="#Personnage"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#PersonnagePrincipal"/>
-        <Class IRI="#Personnage"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#PersonnageRecurrent"/>
-        <Class IRI="#Personnage"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#PersonneTechnique"/>
         <Class IRI="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
     </SubClassOf>
@@ -220,6 +224,10 @@
     <SubClassOf>
         <Class IRI="#Realisateur"/>
         <Class IRI="#PersonneTechnique"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RolePersonnage"/>
+        <Class IRI="http://www.w3.org/2004/02/skos/core#Concept"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Saison"/>
@@ -267,11 +275,67 @@
             <Class IRI="#Saison"/>
         </ObjectMinCardinality>
     </SubClassOf>
-    <DisjointClasses>
-        <Class IRI="#PersonnageInvite"/>
-        <Class IRI="#PersonnagePrincipal"/>
-        <Class IRI="#PersonnageRecurrent"/>
-    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Personnage"/>
+        <NamedIndividual IRI="#ClaireUnderwood"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Personnage"/>
+        <NamedIndividual IRI="#FrancisUnderwood"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Serie"/>
+        <NamedIndividual IRI="#HouseOfCards"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Saison"/>
+        <NamedIndividual IRI="#HouseOfCardsSaison1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Episode"/>
+        <NamedIndividual IRI="#HouseOfCardsSaison1Episode1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#RolePersonnage"/>
+        <NamedIndividual IRI="#Invite"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#RolePersonnage"/>
+        <NamedIndividual IRI="#Principal"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#RolePersonnage"/>
+        <NamedIndividual IRI="#Recurrent"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Acteur"/>
+        <NamedIndividual IRI="#Robin_Wright"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aSaison"/>
+        <NamedIndividual IRI="#HouseOfCards"/>
+        <NamedIndividual IRI="#HouseOfCardsSaison1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aActeur"/>
+        <NamedIndividual IRI="#HouseOfCardsSaison1"/>
+        <NamedIndividual IRI="#Robin_Wright"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPersonnage"/>
+        <NamedIndividual IRI="#HouseOfCardsSaison1"/>
+        <NamedIndividual IRI="#ClaireUnderwood"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPersonnage"/>
+        <NamedIndividual IRI="#HouseOfCardsSaison1"/>
+        <NamedIndividual IRI="#FrancisUnderwood"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#jouePersonnage"/>
+        <NamedIndividual IRI="#Robin_Wright"/>
+        <NamedIndividual IRI="#ClaireUnderwood"/>
+    </ObjectPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#aActeur"/>
         <ObjectProperty IRI="http://xmlns.com/foaf/0.1/page"/>
