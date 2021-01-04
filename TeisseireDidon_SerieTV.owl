@@ -84,6 +84,9 @@
         <ObjectProperty IRI="#aEpisode"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#aEquipe"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#aGenre"/>
     </Declaration>
     <Declaration>
@@ -168,30 +171,30 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#EquipeTechnique"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#aMembre"/>
-            <Class IRI="#Producteur"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EquipeTechnique"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#aMembre"/>
-            <Class IRI="#Realisateur"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EquipeTechnique"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#aMembre"/>
-            <Class IRI="#Scenariste"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EquipeTechnique"/>
-        <ObjectMinCardinality cardinality="2">
+        <ObjectMinCardinality cardinality="1">
             <ObjectProperty IRI="#aMembre"/>
             <Class IRI="#Acteur"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EquipeTechnique"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#aMembre"/>
+            <Class IRI="#Producteur"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EquipeTechnique"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#aMembre"/>
+            <Class IRI="#Realisateur"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EquipeTechnique"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#aMembre"/>
+            <Class IRI="#Scenariste"/>
         </ObjectMinCardinality>
     </SubClassOf>
     <SubClassOf>
@@ -335,31 +338,10 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Serie"/>
-        <ObjectMinCardinality cardinality="1">
-            <ObjectProperty IRI="#aMembre"/>
-            <Class IRI="#Acteur"/>
-        </ObjectMinCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Serie"/>
-        <ObjectMinCardinality cardinality="1">
-            <ObjectProperty IRI="#aMembre"/>
-            <Class IRI="#Producteur"/>
-        </ObjectMinCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Serie"/>
-        <ObjectMinCardinality cardinality="1">
-            <ObjectProperty IRI="#aMembre"/>
-            <Class IRI="#Realisateur"/>
-        </ObjectMinCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Serie"/>
-        <ObjectMinCardinality cardinality="1">
-            <ObjectProperty IRI="#aMembre"/>
-            <Class IRI="#Scenariste"/>
-        </ObjectMinCardinality>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#aEquipe"/>
+            <Class IRI="#EquipeTechnique"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Serie"/>
@@ -454,6 +436,10 @@
         <ObjectProperty IRI="http://xmlns.com/foaf/0.1/page"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#aEquipe"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#aGenre"/>
         <ObjectProperty IRI="http://xmlns.com/foaf/0.1/page"/>
     </SubObjectPropertyOf>
@@ -511,6 +497,10 @@
         <Class IRI="#Saison"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aEquipe"/>
+        <Class IRI="#Serie"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#aGenre"/>
         <Class IRI="#OeuvreLitteraire"/>
     </ObjectPropertyDomain>
@@ -524,11 +514,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#aMembre"/>
-        <Class IRI="#Serie"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#aMembre"/>
-        <Class IRI="http://xmlns.com/foaf/0.1/Organization"/>
+        <Class IRI="#EquipeTechnique"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#aPaysDOrigine"/>
@@ -565,6 +551,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#aEpisode"/>
         <Class IRI="#Episode"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aEquipe"/>
+        <Class IRI="#EquipeTechnique"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#aGenre"/>
