@@ -218,6 +218,13 @@
         <Class IRI="http://xmlns.com/foaf/0.1/Document"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#OeuvreTélévisuelle"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#aGenre"/>
+            <Class IRI="#Genre"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Personnage"/>
         <Class IRI="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
     </SubClassOf>
@@ -485,6 +492,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#aGenre"/>
         <Class IRI="#OeuvreLitteraire"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aGenre"/>
+        <Class IRI="#OeuvreTélévisuelle"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#aHistoire"/>
