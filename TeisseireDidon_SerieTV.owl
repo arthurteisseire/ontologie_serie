@@ -6,6 +6,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://www.TeisseireDidon.com/ontologies/TeisseireDidon_SeriesTV.owl">
+    <Prefix name="" IRI="http://www.TeisseireDidon.com/ontologies/TeisseireDidon_SeriesTV.owl#"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
@@ -32,10 +33,19 @@
         <Class IRI="#OeuvreLitteraire"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#OeuvreTélévisuelle"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Pays"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Personnage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PersonnageLitteraire"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PersonnageTélévisuelle"/>
     </Declaration>
     <Declaration>
         <Class IRI="#PersonneTechnique"/>
@@ -63,6 +73,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/2004/02/skos/core#Concept"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#aActeur"/>
@@ -123,9 +136,6 @@
     </Declaration>
     <Declaration>
         <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://www.w3.org/2004/02/skos/core#Concept"/>
     </Declaration>
     <EquivalentClasses>
         <Class IRI="#RolePersonnage"/>
@@ -195,6 +205,10 @@
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#OeuvreTélévisuelle"/>
+        <Class IRI="http://xmlns.com/foaf/0.1/Document"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Personnage"/>
         <Class IRI="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
     </SubClassOf>
@@ -206,10 +220,25 @@
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#PersonnageLitteraire"/>
         <Class IRI="#Personnage"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PersonnageLitteraire"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#inspireDe"/>
             <Class IRI="#OeuvreLitteraire"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PersonnageTélévisuelle"/>
+        <Class IRI="#Personnage"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PersonnageTélévisuelle"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#inspireDe"/>
+            <Class IRI="#OeuvreTélévisuelle"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -481,26 +510,26 @@
         <Body>
             <ObjectPropertyAtom>
                 <ObjectProperty IRI="#aPersonnage"/>
-                <Variable IRI="relation"/>
-                <Variable IRI="personnage"/>
+                <Variable IRI="urn:swrl:var#relation"/>
+                <Variable IRI="urn:swrl:var#personnage"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
                 <ObjectProperty IRI="#aActeur"/>
-                <Variable IRI="relation"/>
-                <Variable IRI="acteur"/>
+                <Variable IRI="urn:swrl:var#relation"/>
+                <Variable IRI="urn:swrl:var#acteur"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
                 <ObjectProperty IRI="#aSaison"/>
-                <Variable IRI="relation"/>
-                <Variable IRI="saison"/>
+                <Variable IRI="urn:swrl:var#relation"/>
+                <Variable IRI="urn:swrl:var#saison"/>
             </ObjectPropertyAtom>
         </Body>
         <Head>
             <BuiltInAtom IRI="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select">
-                <Variable IRI="relation"/>
-                <Variable IRI="saison"/>
-                <Variable IRI="acteur"/>
-                <Variable IRI="personnage"/>
+                <Variable IRI="urn:swrl:var#relation"/>
+                <Variable IRI="urn:swrl:var#saison"/>
+                <Variable IRI="urn:swrl:var#acteur"/>
+                <Variable IRI="urn:swrl:var#personnage"/>
             </BuiltInAtom>
         </Head>
     </DLSafeRule>
@@ -520,13 +549,13 @@
         <Body>
             <ObjectPropertyAtom>
                 <ObjectProperty IRI="#aActeur"/>
-                <Variable IRI="saison"/>
+                <Variable IRI="urn:swrl:var#saison"/>
                 <NamedIndividual IRI="#RobinWright"/>
             </ObjectPropertyAtom>
         </Body>
         <Head>
             <BuiltInAtom IRI="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select">
-                <Variable IRI="saison"/>
+                <Variable IRI="urn:swrl:var#saison"/>
             </BuiltInAtom>
         </Head>
     </DLSafeRule>
@@ -546,19 +575,19 @@
         <Body>
             <ObjectPropertyAtom>
                 <ObjectProperty IRI="#aPersonnage"/>
-                <Variable IRI="saison"/>
-                <Variable IRI="personnage"/>
+                <Variable IRI="urn:swrl:var#saison"/>
+                <Variable IRI="urn:swrl:var#personnage"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
                 <ObjectProperty IRI="#aActeur"/>
-                <Variable IRI="saison"/>
+                <Variable IRI="urn:swrl:var#saison"/>
                 <NamedIndividual IRI="#RobinWright"/>
             </ObjectPropertyAtom>
         </Body>
         <Head>
             <BuiltInAtom IRI="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select">
-                <Variable IRI="saison"/>
-                <Variable IRI="personnage"/>
+                <Variable IRI="urn:swrl:var#saison"/>
+                <Variable IRI="urn:swrl:var#personnage"/>
             </BuiltInAtom>
         </Head>
     </DLSafeRule>
@@ -578,14 +607,14 @@
         <Body>
             <ObjectPropertyAtom>
                 <ObjectProperty IRI="#aPersonnage"/>
-                <Variable IRI="saison"/>
-                <Variable IRI="personnage"/>
+                <Variable IRI="urn:swrl:var#saison"/>
+                <Variable IRI="urn:swrl:var#personnage"/>
             </ObjectPropertyAtom>
         </Body>
         <Head>
             <BuiltInAtom IRI="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select">
-                <Variable IRI="saison"/>
-                <Variable IRI="personnage"/>
+                <Variable IRI="urn:swrl:var#saison"/>
+                <Variable IRI="urn:swrl:var#personnage"/>
             </BuiltInAtom>
         </Head>
     </DLSafeRule>
