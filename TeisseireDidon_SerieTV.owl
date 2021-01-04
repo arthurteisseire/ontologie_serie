@@ -514,10 +514,6 @@
         <Class IRI="#Serie"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#aPersonnage"/>
-        <Class IRI="#Relation_PersonnageActeurSaison"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#aSaison"/>
         <Class IRI="#Relation_PersonnageActeurSaison"/>
     </ObjectPropertyDomain>
@@ -566,10 +562,6 @@
         <Class IRI="#Pays"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#aPersonnage"/>
-        <Class IRI="#Personnage"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="#aSaison"/>
         <Class IRI="#Saison"/>
     </ObjectPropertyRange>
@@ -593,11 +585,6 @@
         <ObjectProperty IRI="#inspireDe"/>
         <Class IRI="#OeuvreTélévisuelle"/>
     </ObjectPropertyRange>
-    <DisjointObjectProperties>
-        <ObjectProperty IRI="#a_PersonnageInvités"/>
-        <ObjectProperty IRI="#a_PersonnagePrincipal"/>
-        <ObjectProperty IRI="#a_PersonnageRécurrents"/>
-    </DisjointObjectProperties>
     <DLSafeRule>
         <Annotation>
             <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
