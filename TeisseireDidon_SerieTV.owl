@@ -102,6 +102,15 @@
         <ObjectProperty IRI="#aSaison"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#a_PersonnageInvités"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#a_PersonnagePrincipal"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#a_PersonnageRécurrents"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#inspireDe"/>
     </Declaration>
     <Declaration>
@@ -441,6 +450,18 @@
         <ObjectProperty IRI="http://xmlns.com/foaf/0.1/page"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#a_PersonnageInvités"/>
+        <ObjectProperty IRI="#aPersonnage"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#a_PersonnagePrincipal"/>
+        <ObjectProperty IRI="#aPersonnage"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#a_PersonnageRécurrents"/>
+        <ObjectProperty IRI="#aPersonnage"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#inspireDe"/>
         <ObjectProperty IRI="http://xmlns.com/foaf/0.1/page"/>
     </SubObjectPropertyOf>
@@ -494,6 +515,18 @@
         <Class IRI="#Serie"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#a_PersonnageInvités"/>
+        <Class IRI="#Relation_PersonnageActeurSaison"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#a_PersonnagePrincipal"/>
+        <Class IRI="#Relation_PersonnageActeurSaison"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#a_PersonnageRécurrents"/>
+        <Class IRI="#Relation_PersonnageActeurSaison"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#inspireDe"/>
         <Class IRI="#Personnage"/>
     </ObjectPropertyDomain>
@@ -530,6 +563,18 @@
         <Class IRI="#Saison"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#a_PersonnageInvités"/>
+        <Class IRI="#Personnage"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#a_PersonnagePrincipal"/>
+        <Class IRI="#Personnage"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#a_PersonnageRécurrents"/>
+        <Class IRI="#Personnage"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#inspireDe"/>
         <Class IRI="#OeuvreLitteraire"/>
     </ObjectPropertyRange>
@@ -537,6 +582,11 @@
         <ObjectProperty IRI="#inspireDe"/>
         <Class IRI="#OeuvreTélévisuelle"/>
     </ObjectPropertyRange>
+    <DisjointObjectProperties>
+        <ObjectProperty IRI="#a_PersonnageInvités"/>
+        <ObjectProperty IRI="#a_PersonnagePrincipal"/>
+        <ObjectProperty IRI="#a_PersonnageRécurrents"/>
+    </DisjointObjectProperties>
     <DLSafeRule>
         <Annotation>
             <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
