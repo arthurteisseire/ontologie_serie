@@ -533,6 +533,10 @@
         <ObjectProperty IRI="#inspireDe"/>
         <Class IRI="#OeuvreLitteraire"/>
     </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#inspireDe"/>
+        <Class IRI="#OeuvreTélévisuelle"/>
+    </ObjectPropertyRange>
     <DLSafeRule>
         <Annotation>
             <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
