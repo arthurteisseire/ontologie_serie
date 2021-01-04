@@ -270,6 +270,27 @@
         <Class IRI="#PersonneTechnique"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Relation_PersonnageActeurSaison"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#aActeur"/>
+            <Class IRI="#Acteur"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Relation_PersonnageActeurSaison"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#aPersonnage"/>
+            <Class IRI="#Personnage"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Relation_PersonnageActeurSaison"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#aSaison"/>
+            <Class IRI="#Saison"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#RolePersonnage"/>
         <Class IRI="http://www.w3.org/2004/02/skos/core#Concept"/>
     </SubClassOf>
