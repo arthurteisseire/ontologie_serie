@@ -282,6 +282,13 @@
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Saison"/>
+        <ObjectMinCardinality cardinality="2">
+            <ObjectProperty IRI="#aEpisode"/>
+            <Class IRI="#Episode"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Scenariste"/>
         <Class IRI="#PersonneTechnique"/>
     </SubClassOf>
