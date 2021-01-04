@@ -298,6 +298,34 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Serie"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#aMembre"/>
+            <Class IRI="#Acteur"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Serie"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#aMembre"/>
+            <Class IRI="#Producteur"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Serie"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#aMembre"/>
+            <Class IRI="#Realisateur"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Serie"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#aMembre"/>
+            <Class IRI="#Scenariste"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Serie"/>
         <ObjectMinCardinality cardinality="2">
             <ObjectProperty IRI="#aSaison"/>
             <Class IRI="#Saison"/>
@@ -436,6 +464,10 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#aMembre"/>
+        <Class IRI="#Serie"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aMembre"/>
         <Class IRI="http://xmlns.com/foaf/0.1/Organization"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -476,7 +508,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#aMembre"/>
-        <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
+        <Class IRI="#PersonneTechnique"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#aPaysDOrigine"/>
