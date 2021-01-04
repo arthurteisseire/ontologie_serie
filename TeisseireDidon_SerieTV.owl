@@ -307,13 +307,6 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Serie"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#aPaysDOrigine"/>
-            <Class IRI="#Pays"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Serie"/>
         <ObjectMinCardinality cardinality="1">
             <ObjectProperty IRI="#aMembre"/>
             <Class IRI="#Acteur"/>
@@ -338,6 +331,13 @@
         <ObjectMinCardinality cardinality="1">
             <ObjectProperty IRI="#aMembre"/>
             <Class IRI="#Scenariste"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Serie"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#aPaysDOrigine"/>
+            <Class IRI="#Pays"/>
         </ObjectMinCardinality>
     </SubClassOf>
     <SubClassOf>
