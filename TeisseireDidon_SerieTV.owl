@@ -60,9 +60,6 @@
         <Class IRI="#Relation_PersonnageActeurSaison"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#RolePersonnage"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Saison"/>
     </Declaration>
     <Declaration>
@@ -132,15 +129,6 @@
         <NamedIndividual IRI="#HouseOfCardsSaison1Episode1"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Invite"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Principal"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Recurrent"/>
-    </Declaration>
-    <Declaration>
         <NamedIndividual IRI="#Relation_HouseOfCardsSaison1_RobinWright_ClaireUnderwood"/>
     </Declaration>
     <Declaration>
@@ -149,14 +137,6 @@
     <Declaration>
         <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
     </Declaration>
-    <EquivalentClasses>
-        <Class IRI="#RolePersonnage"/>
-        <ObjectOneOf>
-            <NamedIndividual IRI="#Invite"/>
-            <NamedIndividual IRI="#Principal"/>
-            <NamedIndividual IRI="#Recurrent"/>
-        </ObjectOneOf>
-    </EquivalentClasses>
     <SubClassOf>
         <Class IRI="#Acteur"/>
         <Class IRI="#PersonneTechnique"/>
@@ -294,10 +274,6 @@
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#RolePersonnage"/>
-        <Class IRI="http://www.w3.org/2004/02/skos/core#Concept"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#Saison"/>
         <Class IRI="http://xmlns.com/foaf/0.1/Document"/>
     </SubClassOf>
@@ -376,18 +352,6 @@
     <ClassAssertion>
         <Class IRI="#Episode"/>
         <NamedIndividual IRI="#HouseOfCardsSaison1Episode1"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#RolePersonnage"/>
-        <NamedIndividual IRI="#Invite"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#RolePersonnage"/>
-        <NamedIndividual IRI="#Principal"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#RolePersonnage"/>
-        <NamedIndividual IRI="#Recurrent"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Relation_PersonnageActeurSaison"/>
