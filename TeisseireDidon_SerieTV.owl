@@ -153,13 +153,6 @@
         <Class IRI="#EquipeTechnique"/>
         <ObjectMinCardinality cardinality="1">
             <ObjectProperty IRI="#aMembre"/>
-            <Class IRI="#Acteur"/>
-        </ObjectMinCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EquipeTechnique"/>
-        <ObjectMinCardinality cardinality="1">
-            <ObjectProperty IRI="#aMembre"/>
             <Class IRI="#Producteur"/>
         </ObjectMinCardinality>
     </SubClassOf>
