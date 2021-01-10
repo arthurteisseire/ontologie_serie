@@ -669,6 +669,103 @@
         </Annotation>
         <Annotation>
             <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>Question 12</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>Q12</Literal>
+        </Annotation>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#inspireDe"/>
+                <Variable IRI="#episodeA"/>
+                <Variable IRI="#oeuvreA"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#inspireDe"/>
+                <Variable IRI="#episodeB"/>
+                <Variable IRI="#oeuvreB"/>
+            </ObjectPropertyAtom>
+            <SameIndividualAtom>
+                <Variable IRI="#oeuvreA"/>
+                <Variable IRI="#oeuvreB"/>
+            </SameIndividualAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#aEpisode"/>
+                <Variable IRI="#saisonA"/>
+                <Variable IRI="#episodeA"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#aSaison"/>
+                <Variable IRI="#serieA"/>
+                <Variable IRI="#saisonA"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#aEpisode"/>
+                <Variable IRI="#saisonB"/>
+                <Variable IRI="#episodeB"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#aSaison"/>
+                <Variable IRI="#serieB"/>
+                <Variable IRI="#saisonB"/>
+            </ObjectPropertyAtom>
+            <SameIndividualAtom>
+                <Variable IRI="#serieA"/>
+                <Variable IRI="#serieB"/>
+            </SameIndividualAtom>
+        </Body>
+        <Head>
+            <BuiltInAtom IRI="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select">
+                <Variable IRI="#serieA"/>
+                <Variable IRI="#episodeA"/>
+                <Variable IRI="#episodeB"/>
+                <Variable IRI="#oeuvreA"/>
+            </BuiltInAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>Question 11</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>Q11</Literal>
+        </Annotation>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#aSaison"/>
+                <Variable IRI="#serie"/>
+                <Variable IRI="#saison"/>
+            </ObjectPropertyAtom>
+            <SameIndividualAtom>
+                <Variable IRI="#serie"/>
+                <NamedIndividual IRI="#HouseOfCards"/>
+            </SameIndividualAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#aPersonnage"/>
+                <Variable IRI="#saison"/>
+                <Variable IRI="#personnage"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <BuiltInAtom IRI="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#count">
+                <Variable IRI="#personnage"/>
+            </BuiltInAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
             <Literal></Literal>
         </Annotation>
         <Annotation>
